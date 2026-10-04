@@ -395,6 +395,161 @@ h1, h2, h3, h4, h5, h6 {
   gap: 12px;
 }
 
+/* ==========================================================================
+   SELETTORE LINGUA (I18N MULTILINGUA)
+   ========================================================================== */
+.lang-selector-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-btn-current {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.lang-btn-current:hover,
+.lang-btn-current[aria-expanded="true"] {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.lang-btn-current .icon-globe {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.lang-btn-current .lang-arrow {
+  font-size: 0.72rem;
+  transition: transform var(--transition-fast);
+}
+
+.lang-btn-current[aria-expanded="true"] .lang-arrow {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 6px;
+  min-width: 145px;
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 1200;
+  animation: fadeInDown 0.2s ease-out;
+}
+
+.lang-dropdown.show {
+  display: flex;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.lang-option:hover {
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+}
+
+.lang-option.active {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.lang-flag {
+  font-size: 1.1rem;
+}
+
+/* Pills lingua all'interno del menu mobile drawer */
+.mobile-lang-row {
+  display: none;
+  width: 100%;
+}
+
+.mobile-lang-label {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.mobile-lang-pills {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.lang-pill {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.lang-pill.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
 .mobile-menu-btn {
   display: none;
   background: transparent;
@@ -711,6 +866,10 @@ h1, h2, h3, h4, h5, h6 {
 .gallery-section {
   padding: 100px 0;
   background-color: var(--color-bg);
+}
+
+.carousel-hint-mobile {
+  display: none;
 }
 
 .gallery-filter-tabs {
@@ -1436,6 +1595,11 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
+.booking-banner-action .btn {
+  padding: 16px 36px;
+  font-size: 1.05rem;
+}
+
 .contact-layout {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -1487,6 +1651,11 @@ h1, h2, h3, h4, h5, h6 {
   fill: currentColor;
 }
 
+.contact-entry-content {
+  min-width: 0;
+  flex: 1;
+}
+
 .contact-entry-content h5 {
   font-family: var(--font-sans);
   font-size: 0.82rem;
@@ -1501,6 +1670,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--color-dark);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .contact-entry-content a:hover {
@@ -2165,7 +2336,7 @@ input:checked + .slider:before {
   }
 
   .contact-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .footer-grid {
@@ -2213,27 +2384,226 @@ input:checked + .slider:before {
     display: none;
   }
 
+  .lang-btn-current {
+    padding: 6px 11px;
+    font-size: 0.82rem;
+    gap: 4px;
+  }
+
+  .mobile-lang-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 16px;
+    margin-top: 6px;
+    border-top: 1px solid var(--color-border);
+  }
+
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 
-  .attractions-grid {
-    grid-template-columns: 1fr;
+  .about-section,
+  .gallery-section,
+  .amenities-section,
+  .surroundings-section,
+  .transport-section,
+  .reviews-section,
+  .booking-section,
+  .faq-section {
+    padding: 60px 0;
   }
 
+  .section-header {
+    margin-bottom: 30px;
+  }
+
+  /* Indicatore di scorrimento orizzontale mobile */
+  .carousel-hint-mobile {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    margin-bottom: 18px;
+  }
+
+  .carousel-hint-mobile svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+    animation: swipePulse 1.8s infinite ease-in-out;
+  }
+
+  @keyframes swipePulse {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+  }
+
+  /* Filtri Galleria su Mobile: barra a scorrimento orizzontale fluida */
+  .gallery-filter-tabs {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    scrollbar-width: none;
+  }
+
+  .gallery-filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 8px 16px;
+    font-size: 0.86rem;
+  }
+
+  /* Carosello Galleria Mobile (Swipe orizzontale + Peek) */
   .gallery-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 24px;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 16px;
+    scrollbar-width: none;
+  }
+
+  .gallery-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-card {
+    flex: 0 0 82%;
+    max-width: 320px;
+    scroll-snap-align: start;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .gallery-img-wrap {
+    height: 220px;
+  }
+
+  /* Carosello Esperienze Dintorni Mobile (Swipe orizzontale + Peek) */
+  .attractions-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 24px;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 16px;
+    scrollbar-width: none;
+  }
+
+  .attractions-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .attraction-card {
+    flex: 0 0 84%;
+    max-width: 330px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .attraction-header-visual {
+    height: 190px;
+  }
+
+  .attraction-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  /* Carosello Servizi Mobile (Swipe orizzontale + Peek) */
+  .amenities-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 24px;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 16px;
+    scrollbar-width: none;
+  }
+
+  .amenities-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .amenity-card {
+    flex: 0 0 80%;
+    max-width: 300px;
+    scroll-snap-align: start;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .contact-direct-card,
+  .booking-form-card {
+    padding: 28px 20px;
+    border-radius: var(--radius-md);
+  }
+
+  .contact-entry {
+    gap: 14px;
+  }
+
+  .contact-entry-content a,
+  .contact-entry-content p {
+    font-size: 0.98rem;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .form-grid-row {
     grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
   }
 
   .booking-banner-card {
     flex-direction: column;
     text-align: center;
-    padding: 36px 24px;
+    padding: 32px 20px;
+    gap: 24px;
   }
 
   .booking-banner-action {
@@ -2242,6 +2612,8 @@ input:checked + .slider:before {
 
   .booking-banner-action .btn {
     width: 100%;
+    padding: 14px 20px;
+    font-size: 1rem;
   }
 
   .reviews-header-card {
@@ -2252,6 +2624,36 @@ input:checked + .slider:before {
 
   .reviews-summary-left {
     flex-direction: column;
+  }
+
+  /* Carosello Recensioni Mobile (Swipe orizzontale + Peek) */
+  .reviews-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 24px;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 16px;
+    scrollbar-width: none;
+  }
+
+  .reviews-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .review-card {
+    flex: 0 0 85%;
+    max-width: 330px;
+    scroll-snap-align: start;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .footer-grid {

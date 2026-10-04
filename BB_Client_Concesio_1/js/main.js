@@ -102,7 +102,7 @@ function initGalleryAndLightbox() {
       galleryCards.forEach(card => {
         const category = card.getAttribute('data-category');
         if (filter === 'all' || category === filter) {
-          card.style.display = 'block';
+          card.style.display = '';
         } else {
           card.style.display = 'none';
         }
@@ -110,6 +110,15 @@ function initGalleryAndLightbox() {
 
       // Aggiorna lista visibile per navigazione lightbox coerente
       currentVisibleCards = galleryCards.filter(card => card.style.display !== 'none');
+
+      // Riporta il carosello delle foto all'inizio
+      const galleryGrid = document.querySelector('.gallery-grid');
+      if (galleryGrid) {
+        galleryGrid.scrollTo({ left: 0, behavior: 'smooth' });
+      }
+
+      // Su mobile, se il pulsante della categoria è parzialmente fuori vista, portalo visibile
+      btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     });
   });
 
@@ -319,7 +328,7 @@ function initContactForm() {
     );
 
     setTimeout(() => {
-      window.location.href = `mailto:alessandro.vigo22@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:isidoratorosani@gmail.com?subject=${subject}&body=${body}`;
     }, 800);
   });
 }
