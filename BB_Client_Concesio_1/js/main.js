@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initCookieConsent();
   initBackToTop();
+  initProtectedEmails();
 });
 
 /* ==========================================================================
@@ -334,7 +335,7 @@ function initContactForm() {
 }
 
 /* ==========================================================================
-   6. GESTIONE COOKIE & PRIVACY GDPR
+   6. GESTIONE COOKIE & PRIVACY GDPR (CON BLOCCO PREVENTIVO TERZE PARTI)
    ========================================================================== */
 function initCookieConsent() {
   const banner = document.getElementById('cookieBanner');
@@ -345,16 +346,39 @@ function initCookieConsent() {
   const savePrefsBtn = document.getElementById('cookieSavePrefs');
   const closeModalBtn = document.getElementById('cookieModalClose');
   const manageLinks = document.querySelectorAll('.manage-cookies-trigger');
+  const enableMapBtn = document.getElementById('enableMapConsentBtn');
 
   const STORAGE_KEY = 'casa_jesi_cookie_consent_v1';
 
   // Controlla preferenze salvate
-  const savedConsent = localStorage.getItem(STORAGE_KEY);
+  let savedConsent = localStorage.getItem(STORAGE_KEY);
 
-  if (!savedConsent && banner) {
+  if (savedConsent) {
+    try {
+      const parsed = JSON.parse(savedConsent);
+      applyConsentPreferences(parsed);
+    } catch (e) {
+      console.error(e);
+    }
+  } else if (banner) {
     setTimeout(() => {
       banner.classList.add('show');
     }, 1000);
+  }
+
+  // Pulsante "Abilita Mappa Interattiva" nel placeholder della mappa
+  if (enableMapBtn) {
+    enableMapBtn.addEventListener('click', () => {
+      let currentPrefs = { necessary: true, analytics: false, marketing: true };
+      if (savedConsent) {
+        try {
+          const parsed = JSON.parse(savedConsent);
+          currentPrefs = { ...parsed, marketing: true };
+        } catch (e) {}
+      }
+      saveConsent(currentPrefs);
+      closeBanner();
+    });
   }
 
   // Accetta tutti i cookie
@@ -419,17 +443,20 @@ function initCookieConsent() {
 
   function openModal() {
     if (!modal) return;
-    // Carica stato precedente se presente
+    // Carica stato precedente se presente (oppure false di default per opt-in GDPR)
+    const anInput = document.getElementById('cookieAnalytics');
+    const mkInput = document.getElementById('cookieMarketing');
     if (savedConsent) {
       try {
         const parsed = JSON.parse(savedConsent);
-        const anInput = document.getElementById('cookieAnalytics');
-        const mkInput = document.getElementById('cookieMarketing');
-        if (anInput) anInput.checked = parsed.analytics;
-        if (mkInput) mkInput.checked = parsed.marketing;
+        if (anInput) anInput.checked = Boolean(parsed.analytics);
+        if (mkInput) mkInput.checked = Boolean(parsed.marketing);
       } catch (e) {
         console.error(e);
       }
+    } else {
+      if (anInput) anInput.checked = false;
+      if (mkInput) mkInput.checked = false;
     }
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -447,11 +474,49 @@ function initCookieConsent() {
     }
   }
 
+  function applyConsentPreferences(preferences) {
+    const mapIframe = document.getElementById('googleMapIframe');
+    const mapPlaceholder = document.getElementById('mapCookiePlaceholder');
+    if (!mapIframe) return;
+
+    if (preferences && preferences.marketing) {
+      const dataSrc = mapIframe.getAttribute('data-src');
+      if (dataSrc && !mapIframe.getAttribute('src')) {
+        mapIframe.setAttribute('src', dataSrc);
+      }
+      mapIframe.style.display = 'block';
+      if (mapPlaceholder) mapPlaceholder.style.display = 'none';
+    } else {
+      mapIframe.removeAttribute('src');
+      mapIframe.style.display = 'none';
+      if (mapPlaceholder) mapPlaceholder.style.display = 'flex';
+    }
+  }
+
   function saveConsent(preferences) {
     const consentPayload = {
       ...preferences,
       timestamp: new Date().toISOString()
     };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(consentPayload));
+    savedConsent = JSON.stringify(consentPayload);
+    localStorage.setItem(STORAGE_KEY, savedConsent);
+    applyConsentPreferences(consentPayload);
   }
+}
+
+/* ==========================================================================
+   7. PROTEZIONE ANTI-SPAM INDIRIZZI EMAIL
+   ========================================================================== */
+function initProtectedEmails() {
+  document.querySelectorAll('.protected-email').forEach(link => {
+    const user = link.getAttribute('data-user');
+    const domain = link.getAttribute('data-domain');
+    if (user && domain) {
+      const fullEmail = `${user}@${domain}`;
+      link.setAttribute('href', `mailto:${fullEmail}`);
+      if (!link.textContent.trim() || link.textContent.includes('@')) {
+        link.textContent = fullEmail;
+      }
+    }
+  });
 }

@@ -1421,6 +1421,56 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
 }
 
+.map-cookie-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  padding: 36px 28px;
+  background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-primary-light) 100%);
+  text-align: center;
+}
+
+.map-cookie-placeholder-inner {
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.map-cookie-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.map-cookie-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.map-cookie-placeholder-inner h4 {
+  font-size: 1.2rem;
+  color: var(--color-dark);
+}
+
+.map-cookie-placeholder-inner p {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin-bottom: 6px;
+}
+
 .map-actions {
   display: flex;
   gap: 12px;

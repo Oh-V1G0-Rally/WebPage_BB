@@ -17,7 +17,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.casajesi.com/">
   <meta property="og:title" content="Casa Vacanza Da Jesi | Alloggio Confortevole a Concesio (Brescia)">
-  <meta property="og:description" content="Elegante appartamento in Via Don Cattina 14 con terrazza privata, 1 camera matrimoniale, 1 camera con 2 letti singoli, divano letto (fino a 6 ospiti), cucina attrezzata, parcheggio gratuito e Wi-Fi veloce. Valutazione 4.98 su Airbnb!">
+  <meta property="og:description" content="Elegante appartamento in Via Don Cattina 18 con terrazza privata, 1 camera matrimoniale, 1 camera con 2 letti singoli, divano letto (fino a 6 ospiti), cucina attrezzata, parcheggio gratuito e Wi-Fi veloce. Valutazione 4.98 su Airbnb!">
   <meta property="og:image" content="https://www.casajesi.com/assets/img_home/Casa_Esterna_1.jpeg">
 
   <!-- Twitter Card -->
@@ -69,9 +69,9 @@
 </head>
 <body>
 
-  <!-- Top Announcement Bar (CIN obbligatorio per Legge Italiana) -->
+  <!-- Top Announcement Bar (CIN e CIR obbligatori per Legge Italiana e Regione Lombardia) -->
   <div class="top-announcement">
-    <span><span data-i18n="announcement_cin">Struttura turistica verificata • Codice Identificativo Nazionale: </span><span class="cin-badge">IT017061C2U318FZB6</span></span>
+    <span><span data-i18n="announcement_cin">Struttura turistica verificata • CIN: </span><span class="cin-badge">IT017061C2U318FZB6</span> • <span class="cin-badge">CIR: 017061-CNI-00018</span></span>
     <span><span data-i18n="announcement_rating">Valutazione Airbnb: </span><strong>★ 4.98 / 5.0</strong></span>
   </div>
 
@@ -169,7 +169,7 @@
             </h1>
 
             <p class="hero-description" data-i18n="hero_desc">
-              Un appartamento luminoso, moderno e arredato a nuovo in Via Don Cattina 14 a Concesio. È presente una terrazza privata, due accoglienti camere da letto (una matrimoniale e una con due letti singoli), divano letto a due posti (fino a 6 ospiti), cucina accessoriata e la massima comodità per visitare Brescia, la Franciacorta e i laghi.
+              Un appartamento luminoso, moderno e arredato a nuovo in Via Don Cattina 18 a Concesio. È presente una terrazza privata, due accoglienti camere da letto (una matrimoniale e una con due letti singoli), divano letto a due posti (fino a 6 ospiti), cucina accessoriata e la massima comodità per visitare Brescia, la Franciacorta e i laghi.
             </p>
 
             <div class="hero-actions">
@@ -256,7 +256,7 @@
             <span class="section-badge" data-i18n="about_badge">La Nostra Accoglienza</span>
             <h2 data-i18n="about_title">Uno spazio accogliente, curato e pronto per un soggiorno fino a 6 persone</h2>
             <p data-i18n="about_p1">
-              Benvenuti a <strong>Casa Vacanza Da Jesi</strong>! Situata a Concesio in Via Don Cattina 14, la nostra abitazione offre una soluzione comoda, moderna e silenziosa, a pochissimi minuti dal cuore di Brescia e strategicamente posizionata per raggiungere la Franciacorta, il Lago d'Iseo e il Lago di Garda.
+              Benvenuti a <strong>Casa Vacanza Da Jesi</strong>! Situata a Concesio in Via Don Cattina 18, la nostra abitazione offre una soluzione comoda, moderna e silenziosa, a pochissimi minuti dal cuore di Brescia e strategicamente posizionata per raggiungere la Franciacorta, il Lago d'Iseo e il Lago di Garda.
             </p>
             <p data-i18n="about_p2">
               La struttura dispone di <strong>una camera con letto matrimoniale</strong>, una <strong>seconda camera con due comodi letti singoli</strong> e di un <strong>divano letto per 2 persone</strong> nell'ampio soggiorno, garantendo così fino a <strong>6 comodi posti letto</strong>. A disposizione degli ospiti troverai una cucina completa, arredi nuovi e una splendida <strong>terrazzina privata</strong> per mangiare o rilassarsi all'aperto.
@@ -988,13 +988,26 @@
           <!-- Mappa Interattiva & Indicazioni -->
           <div class="map-container-wrap">
             <div class="map-card">
-              <!-- Mappa Google Maps incorporata con PIN esatto su Via Don Cattina 14, Concesio -->
+              <!-- Blocco preventivo GDPR per Google Maps finché l'utente non presta il consenso -->
+              <div class="map-cookie-placeholder" id="mapCookiePlaceholder">
+                <div class="map-cookie-placeholder-inner">
+                  <div class="map-cookie-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  </div>
+                  <h4 data-i18n="map_consent_title">Mappa Interattiva (Via Don Cattina, 18 - Concesio)</h4>
+                  <p data-i18n="map_consent_desc">Per visualizzare la mappa interattiva integrata di Google Maps, abilita i servizi esterni (Cookie di Terze Parti), oppure apri direttamente la posizione nell'app mappe.</p>
+                  <button type="button" class="btn btn-primary" id="enableMapConsentBtn" data-i18n="map_consent_btn">Abilita Mappa Interattiva</button>
+                </div>
+              </div>
+              <!-- Mappa Google Maps incorporata con PIN esatto su Via Don Cattina 18, Concesio -->
               <iframe 
-                src="https://maps.google.com/maps?q=Via+Don+Cattina+18,+25062+Concesio+BS&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
-                title="Mappa Posizione Esatta Casa Vacanza Da Jesi - Via Don Cattina 14, Concesio" 
+                id="googleMapIframe"
+                data-src="https://maps.google.com/maps?q=Via+Don+Cattina+18,+25062+Concesio+BS&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
+                title="Mappa Posizione Esatta Casa Vacanza Da Jesi - Via Don Cattina 18, Concesio" 
                 loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade" 
-                allowfullscreen>
+                allowfullscreen
+                style="display: none;">
               </iframe>
             </div>
 
@@ -1240,7 +1253,7 @@
                 </div>
                 <div class="contact-entry-content">
                   <h5 data-i18n="contact_email_title">Email Diretta</h5>
-                  <a href="mailto:isidoratorosani@gmail.com">isidoratorosani@gmail.com</a>
+                  <a href="mailto:isidoratorosani@gmail.com" class="protected-email" data-user="isidoratorosani" data-domain="gmail.com">isidoratorosani@gmail.com</a>
                 </div>
               </div>
 
@@ -1260,7 +1273,7 @@
                 </div>
                 <div class="contact-entry-content">
                   <h5 data-i18n="contact_insta_title">Seguici su Instagram</h5>
-                  <a href="https://casavacanzejesi.it/" target="_blank" rel="noopener">@casavacanzejesi</a>
+                  <a href="https://casavacanzejesi.it/" target="_blank" rel="noopener noreferrer">@casavacanzejesi</a>
                 </div>
               </div>
 
@@ -1269,8 +1282,8 @@
                   <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
                 </div>
                 <div class="contact-entry-content">
-                  <h5 data-i18n="contact_cin_title">Codice CIN / Registrazione Ufficiale</h5>
-                  <p><code>IT017061C2U318FZB6</code></p>
+                  <h5 data-i18n="contact_cin_title">Codice CIN &amp; CIR / Registrazione Ufficiale</h5>
+                  <p><strong>CIN:</strong> <code>IT017061C2U318FZB6</code><br><strong>CIR:</strong> <code>017061-CNI-00018</code></p>
                 </div>
               </div>
 
@@ -1365,8 +1378,8 @@
             Il rifugio perfetto a Concesio (Brescia) per scoprire le bellezze artistiche, i laghi lombardi e la natura della Val Trompia nel massimo del relax.
           </p>
           <div class="footer-legal-box">
-            <p><strong>Codice CIN:</strong> <code>IT017061C2U318FZB6</code></p>
-            <p data-i18n="footer_legal">Struttura adibita a Locazione Turistica ai sensi delle normative nazionali e regionali vigenti.</p>
+            <p><strong>Codice CIN:</strong> <code>IT017061C2U318FZB6</code> • <strong>CIR:</strong> <code>017061-CNI-00018</code></p>
+            <p data-i18n="footer_legal">Struttura adibita a Locazione Turistica ai sensi delle normative nazionali e regionali vigenti (Regione Lombardia).</p>
           </div>
         </div>
 
@@ -1397,9 +1410,9 @@
         <div class="footer-col">
           <h4 data-i18n="footer_contact_title">Contatti & Prenotazioni</h4>
           <ul class="footer-links">
-            <li><a href="mailto:isidoratorosani@gmail.com">isidoratorosani@gmail.com</a></li>
-            <li><a href="https://www.airbnb.it/rooms/1531911886260116109" target="_blank" rel="noopener" data-i18n="booking_banner_btn">Prenota su Airbnb</a></li>
-            <li><a href="https://casavacanzejesi.it/" target="_blank" rel="noopener">Instagram Ufficiale</a></li>
+            <li><a href="mailto:isidoratorosani@gmail.com" class="protected-email" data-user="isidoratorosani" data-domain="gmail.com">isidoratorosani@gmail.com</a></li>
+            <li><a href="https://www.airbnb.it/rooms/1531911886260116109" target="_blank" rel="noopener noreferrer" data-i18n="booking_banner_btn">Prenota su Airbnb</a></li>
+            <li><a href="https://casavacanzejesi.it/" target="_blank" rel="noopener noreferrer">Instagram Ufficiale</a></li>
             <li><a href="privacy-cookie-policy.html" data-i18n="footer_link_privacy">Informativa Privacy (GDPR)</a></li>
             <li><button type="button" class="manage-cookies-trigger" style="text-align:left;" data-i18n="footer_link_cookies">Gestisci Preferenze Cookie</button></li>
           </ul>
@@ -1477,7 +1490,7 @@
           <div class="cookie-cat-top">
             <h4>Cookie Analitici Anonimizzati</h4>
             <label class="switch">
-              <input type="checkbox" id="cookieAnalytics" checked>
+              <input type="checkbox" id="cookieAnalytics">
               <span class="slider"></span>
             </label>
           </div>

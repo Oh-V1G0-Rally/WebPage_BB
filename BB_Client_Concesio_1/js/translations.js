@@ -6,10 +6,10 @@
 const TRANSLATIONS = {
   it: {
     page_title: "Casa Vacanza Da Jesi | B&B e Alloggio a Concesio (Brescia) • Fino a 6 Ospiti • ★4.98 Airbnb",
-    meta_desc: "Soggiorna a Casa Vacanza Da Jesi in Via Don Cattina, 14 a Concesio (Brescia). Fino a 6 ospiti, 1 camera matrimoniale, 1 camera con 2 letti singoli, divano letto, terrazza, Wi-Fi e parcheggio gratuito.",
+    meta_desc: "Soggiorna a Casa Vacanza Da Jesi in Via Don Cattina, 18 a Concesio (Brescia). Fino a 6 ospiti, 1 camera matrimoniale, 1 camera con 2 letti singoli, divano letto, terrazza, Wi-Fi e parcheggio gratuito.",
     
     // Announcement
-    announcement_cin: "Struttura turistica verificata • Codice Identificativo Nazionale: ",
+    announcement_cin: "Struttura turistica verificata • CIN: ",
     announcement_rating: "Valutazione Airbnb: ",
     
     // Header & Nav
@@ -25,7 +25,7 @@ const TRANSLATIONS = {
     // Hero
     hero_badge: "Valutazione <strong>4.98 ★</strong> su Airbnb • Amato dagli Ospiti",
     hero_title: "Il tuo soggiorno ideale tra <span class=\"highlight\">Brescia</span>, laghi incantevoli e relax.",
-    hero_desc: "Un appartamento luminoso, moderno e arredato a nuovo in Via Don Cattina 14 a Concesio. È presente una terrazza privata, due accoglienti camere da letto (una matrimoniale e una con due letti singoli), divano letto a due posti (fino a 6 ospiti), cucina accessoriata e la massima comodità per visitare Brescia, la Franciacorta e i laghi.",
+    hero_desc: "Un appartamento luminoso, moderno e arredato a nuovo in Via Don Cattina 18 a Concesio. È presente una terrazza privata, due accoglienti camere da letto (una matrimoniale e una con due letti singoli), divano letto a due posti (fino a 6 ospiti), cucina accessoriata e la massima comodità per visitare Brescia, la Franciacorta e i laghi.",
     hero_btn_airbnb: "Prenota su AirBnB",
     hero_btn_direct: "Richiedi Disponibilità Diretta",
     hero_btn_photos: "Guarda le Foto",
@@ -34,13 +34,13 @@ const TRANSLATIONS = {
     hero_pill_terrace: "Terrazza Panoramica",
     hero_pill_wifi: "Wi-Fi Gratuito",
     hero_pill_parking: "Parcheggio Gratuito",
-    hero_floating_title: "Via Don Cattina, 14",
+    hero_floating_title: "Via Don Cattina, 18",
     hero_floating_desc: "25062 Concesio (BS) • Quartiere residenziale calmo e ben servito.",
 
     // About
     about_badge: "La Nostra Accoglienza",
     about_title: "Uno spazio accogliente, curato e pronto per un soggiorno fino a 6 persone",
-    about_p1: "Benvenuti a <strong>Casa Vacanza Da Jesi</strong>! Situata a Concesio in Via Don Cattina 14, la nostra abitazione offre una soluzione comoda, moderna e silenziosa, a pochissimi minuti dal cuore di Brescia e strategicamente posizionata per raggiungere la Franciacorta, il Lago d'Iseo e il Lago di Garda.",
+    about_p1: "Benvenuti a <strong>Casa Vacanza Da Jesi</strong>! Situata a Concesio in Via Don Cattina 18, la nostra abitazione offre una soluzione comoda, moderna e silenziosa, a pochissimi minuti dal cuore di Brescia e strategicamente posizionata per raggiungere la Franciacorta, il Lago d'Iseo e il Lago di Garda.",
     about_p2: "La struttura dispone di <strong>una camera con letto matrimoniale</strong>, una <strong>seconda camera con due comodi letti singoli</strong> e di un <strong>divano letto per 2 persone</strong> nell'ampio soggiorno, garantendo così fino a <strong>6 comodi posti letto</strong>. A disposizione degli ospiti troverai una cucina completa, arredi nuovi e una splendida <strong>terrazzina privata</strong> per mangiare o rilassarsi all'aperto.",
     stat_guests: "Ospiti Max",
     stat_rooms: "Camere + Divano",
@@ -190,6 +190,9 @@ const TRANSLATIONS = {
     transport_air_desc: "Milano Bergamo Orio al Serio (BGY) a 45 min, Verona Villafranca (VRN) a 45 min, Milano Linate (LIN) a 60 min.",
     btn_google_maps: "Apri su Google Maps",
     btn_apple_maps: "Apri su Apple Maps",
+    map_consent_title: "Mappa Interattiva (Via Don Cattina, 18 - Concesio)",
+    map_consent_desc: "Per visualizzare la mappa interattiva integrata di Google Maps, abilita i servizi esterni (Cookie di Terze Parti), oppure apri direttamente la posizione nell'app mappe.",
+    map_consent_btn: "Abilita Mappa Interattiva",
 
     // Reviews
     reviews_caption: "Valutazione basata sulle recensioni verificate su AirBnB",
@@ -234,7 +237,7 @@ const TRANSLATIONS = {
     contact_email_title: "Email Diretta",
     contact_address_title: "Indirizzo Alloggio",
     contact_insta_title: "Seguici su Instagram",
-    contact_cin_title: "Codice CIN / Registrazione Ufficiale",
+    contact_cin_title: "Codice CIN & CIR / Registrazione Ufficiale",
     form_title: "Richiedi Informazioni o un Preventivo",
     form_desc: "Compila il form sottostante per verificare date disponibili o chiedere informazioni sull'alloggio.",
     form_name_label: "Nome e Cognome *",
@@ -288,10 +291,10 @@ const TRANSLATIONS = {
 
   en: {
     page_title: "Casa Vacanza Da Jesi | B&B & Holiday Home in Concesio (Brescia) • Up to 6 Guests • ★4.98 Airbnb",
-    meta_desc: "Stay at Casa Vacanza Da Jesi on Via Don Cattina, 14 in Concesio (Brescia). Up to 6 guests, 1 double bedroom, 1 twin bedroom, sofa bed, terrace, Wi-Fi and free parking.",
+    meta_desc: "Stay at Casa Vacanza Da Jesi on Via Don Cattina, 18 in Concesio (Brescia). Up to 6 guests, 1 double bedroom, 1 twin bedroom, sofa bed, terrace, Wi-Fi and free parking.",
     
     // Announcement
-    announcement_cin: "Verified tourist accommodation • National Identification Code: ",
+    announcement_cin: "Verified tourist accommodation • CIN: ",
     announcement_rating: "Airbnb Rating: ",
     
     // Header & Nav
@@ -307,7 +310,7 @@ const TRANSLATIONS = {
     // Hero
     hero_badge: "Rating <strong>4.98 ★</strong> on Airbnb • Guest Favorite",
     hero_title: "Your ideal getaway near <span class=\"highlight\">Brescia</span>, enchanting lakes & relax.",
-    hero_desc: "A bright, modern, newly furnished apartment on Via Don Cattina 14 in Concesio. A private terrace is available, two cozy bedrooms (one double and one with two twin beds), double sofa bed (up to 6 guests), fully equipped kitchen and the utmost convenience to explore Brescia, Franciacorta and the lakes.",
+    hero_desc: "A bright, modern, newly furnished apartment on Via Don Cattina 18 in Concesio. A private terrace is available, two cozy bedrooms (one double and one with two twin beds), double sofa bed (up to 6 guests), fully equipped kitchen and the utmost convenience to explore Brescia, Franciacorta and the lakes.",
     hero_btn_airbnb: "Book on AirBnB",
     hero_btn_direct: "Request Direct Availability",
     hero_btn_photos: "View Photos",
@@ -316,13 +319,13 @@ const TRANSLATIONS = {
     hero_pill_terrace: "Panoramic Terrace",
     hero_pill_wifi: "Free Wi-Fi",
     hero_pill_parking: "Free Parking",
-    hero_floating_title: "Via Don Cattina, 14",
+    hero_floating_title: "Via Don Cattina, 18",
     hero_floating_desc: "25062 Concesio (BS) • Quiet, well-served residential area.",
 
     // About
     about_badge: "Our Hospitality",
     about_title: "A welcoming, refined space ready for a stay of up to 6 people",
-    about_p1: "Welcome to <strong>Casa Vacanza Da Jesi</strong>! Located in Concesio on Via Don Cattina 14, our home offers a comfortable, modern, and peaceful stay just minutes from the heart of Brescia and strategically positioned to explore Franciacorta, Lake Iseo, and Lake Garda.",
+    about_p1: "Welcome to <strong>Casa Vacanza Da Jesi</strong>! Located in Concesio on Via Don Cattina 18, our home offers a comfortable, modern, and peaceful stay just minutes from the heart of Brescia and strategically positioned to explore Franciacorta, Lake Iseo, and Lake Garda.",
     about_p2: "The apartment features <strong>one bedroom with a double bed</strong>, a <strong>second bedroom with two comfortable twin beds</strong>, and a <strong>double sofa bed</strong> in the spacious living room, accommodating up to <strong>6 guests</strong>. You'll also enjoy a fully equipped kitchen, brand-new furnishings, and a lovely <strong>private terrace</strong> for outdoor dining and relaxation.",
     stat_guests: "Max Guests",
     stat_rooms: "Bedrooms + Sofa",
@@ -472,6 +475,9 @@ const TRANSLATIONS = {
     transport_air_desc: "Milan Bergamo Orio al Serio (BGY) 45 min, Verona Villafranca (VRN) 45 min, Milan Linate (LIN) 60 min.",
     btn_google_maps: "Open in Google Maps",
     btn_apple_maps: "Open in Apple Maps",
+    map_consent_title: "Interactive Map (Via Don Cattina, 18 - Concesio)",
+    map_consent_desc: "To view the embedded Google Maps interactive map, please enable external services (Third-Party Cookies), or open the location directly in your maps app.",
+    map_consent_btn: "Enable Interactive Map",
 
     // Reviews
     reviews_caption: "Rating based on verified reviews on AirBnB",
@@ -516,7 +522,7 @@ const TRANSLATIONS = {
     contact_email_title: "Direct Email",
     contact_address_title: "Apartment Address",
     contact_insta_title: "Follow Us on Instagram",
-    contact_cin_title: "National Identification Code (CIN)",
+    contact_cin_title: "Official Registration Codes (CIN & CIR)",
     form_title: "Request Information or a Quote",
     form_desc: "Fill out the form below to check available dates or ask any questions about the accommodation.",
     form_name_label: "Full Name *",
@@ -571,10 +577,10 @@ const TRANSLATIONS = {
 
   es: {
     page_title: "Casa Vacanza Da Jesi | Alojamiento y B&B en Concesio (Brescia) • Hasta 6 Huéspedes • ★4.98 Airbnb",
-    meta_desc: "Alójate en Casa Vacanza Da Jesi en Via Don Cattina, 14 en Concesio (Brescia). Hasta 6 huéspedes, 1 dormitorio de matrimonio, 1 dormitorio con 2 camas individuales, sofá cama, terraza, Wi-Fi y aparcamiento gratuito.",
+    meta_desc: "Alójate en Casa Vacanza Da Jesi en Via Don Cattina, 18 en Concesio (Brescia). Hasta 6 huéspedes, 1 dormitorio de matrimonio, 1 dormitorio con 2 camas individuales, sofá cama, terraza, Wi-Fi y aparcamiento gratuito.",
     
     // Announcement
-    announcement_cin: "Alojamiento turístico verificado • Código Identificativo Nacional: ",
+    announcement_cin: "Alojamiento turístico verificado • CIN: ",
     announcement_rating: "Puntuación Airbnb: ",
     
     // Header & Nav
@@ -590,7 +596,7 @@ const TRANSLATIONS = {
     // Hero
     hero_badge: "Puntuación <strong>4.98 ★</strong> en Airbnb • Favorito entre Huéspedes",
     hero_title: "Tu estancia ideal entre <span class=\"highlight\">Brescia</span>, lagos encantadores y relax.",
-    hero_desc: "Un apartamento luminoso, moderno y recién amueblado en Via Don Cattina 14 en Concesio. Está presente una terraza privada, dos acogedores dormitorios (uno de matrimonio y otro con dos camas individuales), sofá cama doble (hasta 6 huéspedes), cocina totalmente equipada y la máxima comodidad para visitar Brescia, Franciacorta y los lagos.",
+    hero_desc: "Un apartamento luminoso, moderno y recién amueblado en Via Don Cattina 18 en Concesio. Está presente una terraza privada, dos acogedores dormitorios (uno de matrimonio y otro con dos camas individuales), sofá cama doble (hasta 6 huéspedes), cocina totalmente equipada y la máxima comodidad para visitar Brescia, Franciacorta y los lagos.",
     hero_btn_airbnb: "Reservar en AirBnB",
     hero_btn_direct: "Solicitar Disponibilidad Directa",
     hero_btn_photos: "Ver Fotos",
@@ -599,13 +605,13 @@ const TRANSLATIONS = {
     hero_pill_terrace: "Terraza Panorámica",
     hero_pill_wifi: "Wi-Fi Gratuito",
     hero_pill_parking: "Aparcamiento Gratuito",
-    hero_floating_title: "Via Don Cattina, 14",
+    hero_floating_title: "Via Don Cattina, 18",
     hero_floating_desc: "25062 Concesio (BS) • Barrio residencial tranquilo y con todos los servicios.",
 
     // About
     about_badge: "Nuestra Hospitalidad",
     about_title: "Un espacio acogedor, cuidado y listo para estancias de hasta 6 personas",
-    about_p1: "¡Bienvenidos a <strong>Casa Vacanza Da Jesi</strong>! Situada en Concesio en Via Don Cattina 14, nuestra vivienda ofrece una solución cómoda, moderna y silenciosa, a pocos minutos del centro de Brescia y en una ubicación estratégica para visitar Franciacorta, el Lago de Iseo y el Lago de Garda.",
+    about_p1: "¡Bienvenidos a <strong>Casa Vacanza Da Jesi</strong>! Situada en Concesio en Via Don Cattina 18, nuestra vivienda ofrece una solución cómoda, moderna y silenciosa, a pocos minutos del centro de Brescia y en una ubicación estratégica para visitar Franciacorta, el Lago de Iseo y el Lago de Garda.",
     about_p2: "El alojamiento cuenta con <strong>un dormitorio con cama de matrimonio</strong>, un <strong>segundo dormitorio con dos cómodas camas individuales</strong> y un <strong>sofá cama para 2 personas</strong> en el amplio salón, garantizando hasta <strong>6 cómodas plazas</strong>. Los huéspedes disponen de cocina completa, mobiliario nuevo y una maravillosa <strong>terraza privada</strong> para comer o relajarse al aire libre.",
     stat_guests: "Huéspedes Máx",
     stat_rooms: "Habitaciones + Sofá",
@@ -755,6 +761,9 @@ const TRANSLATIONS = {
     transport_air_desc: "Milán Bérgamo Orio al Serio (BGY) a 45 min, Verona Villafranca (VRN) a 45 min, Milán Linate (LIN) a 60 min.",
     btn_google_maps: "Abrir en Google Maps",
     btn_apple_maps: "Abrir en Apple Maps",
+    map_consent_title: "Mapa Interactivo (Via Don Cattina, 18 - Concesio)",
+    map_consent_desc: "Para visualizar el mapa interactivo de Google Maps integrado, habilita los servicios externos (Cookies de Terceros) o abre directamente la ubicación en tu aplicación de mapas.",
+    map_consent_btn: "Habilitar Mapa Interactivo",
 
     // Reviews
     reviews_caption: "Puntuación basada en reseñas verificadas en AirBnB",
@@ -799,7 +808,7 @@ const TRANSLATIONS = {
     contact_email_title: "Email Directo",
     contact_address_title: "Dirección del Alojamiento",
     contact_insta_title: "Síguenos en Instagram",
-    contact_cin_title: "Código de Registro Oficial (CIN)",
+    contact_cin_title: "Códigos de Registro Oficial (CIN & CIR)",
     form_title: "Solicita Información o un Presupuesto",
     form_desc: "Completa el siguiente formulario para comprobar fechas disponibles o consultar cualquier duda sobre la casa.",
     form_name_label: "Nombre y Apellidos *",
